@@ -3,6 +3,7 @@ import ContentInputArea from './content.input.area';
 import classNames from 'classnames';
 import { useRenderBlockTypeIcon } from '../../hooks/use.render.block.type';
 import ActionsTabsContainer from '../actions.tabs.container/actions.tabs.container';
+import { useSelectActiveBlockId } from '../../redux/hooks/select.hooks/use.select.active.block.id';
 
 type ConstructorBlockProps = {
   type: BlockType;
@@ -20,27 +21,28 @@ const ConstructorBlock: React.FC<ConstructorBlockProps> = ({
   index,
 }) => {
   const renderIcon = useRenderBlockTypeIcon();
+  const activeBlockId = useSelectActiveBlockId();
 
   const containerClass = classNames(
     'px-basic py-medium flex flex-col ' +
       'justify-between items-center w-full rounded-lg ' +
       'mb-medium min-h-[84px] cursor-pointer relative',
     {
-      'bg-bg-main': id !== '1',
-      'bg-bg-active': id === '1',
+      'bg-bg-main': id !== activeBlockId,
+      'bg-bg-active': id === activeBlockId,
     }
   );
 
   return (
     <div className={containerClass}>
-      {id === '1' && <ActionsTabsContainer id={id} />}
+      {id === activeBlockId && <ActionsTabsContainer id={id} />}
 
       <div className="h-full w-full flex flex-col gap-basic justify-center items-center">
         {renderIcon(type)}
 
         <span className="text-sm">{title}</span>
 
-        {id === '1' && <ContentInputArea content={content} id={id} />}
+        {id === activeBlockId && <ContentInputArea content={content} id={id} />}
       </div>
     </div>
   );
