@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDrag } from 'react-dnd';
 import classNames from 'classnames';
-import { useRenderBlockTypeIcon } from '../../hooks/useRenderBlock/useRenderBlockTypeIcon';
+import { useRenderBlockTypeIcon } from '../../hooks/use.render.block.type';
 
 type BlockControlProps = {
   type: BlockType;
