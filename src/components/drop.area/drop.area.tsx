@@ -1,25 +1,24 @@
 import React from 'react';
 import { useDrop } from 'react-dnd';
 import classNames from 'classnames';
+import { useAddNewBlock } from '../../hooks/use.add.new.block';
 
 type DropAreaProps = {
   children: ReactChildrenType;
 };
 
 const DropArea: React.FC<DropAreaProps> = ({ children }) => {
-  const onDrop = (item: any) => {
-    console.log('Handle drop ');
-    console.log(item);
-  };
+  const addNewBlock = useAddNewBlock();
 
   const [{ isOver, canDrop }, drop] = useDrop(() => ({
     accept: ['headline', 'paragraph', 'button', 'image'],
-    drop: (item, monitor) => {
+
+    drop: (item: { type: BlockType }, monitor) => {
       if (monitor.didDrop()) {
         return;
       }
 
-      onDrop(item);
+      addNewBlock(item.type);
     },
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),

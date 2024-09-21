@@ -1,7 +1,7 @@
 import useConstructorBlocksDispatch from '../redux/hooks/dispatch.hooks/use.blocks.list.dispatch';
-import { useSelectConstructorBlocks } from '../redux/hooks/select.hooks/use.select.constructor.blocks';
 import { v4 as uuidv4 } from 'uuid';
 import { BlockTitles } from '../utils/enums';
+import { useSelectConstructorBlocks } from '../redux/hooks/select.hooks/use.select.constructor.blocks';
 
 type UseAddNewBlockType = () => AddNewBlockType;
 

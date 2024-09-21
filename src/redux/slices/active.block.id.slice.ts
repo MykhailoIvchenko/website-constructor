@@ -13,7 +13,7 @@ export const activeBlockIdSlice = createSlice({
   },
 });
 
-export const selectNotification = (state: RootState) => state.activeBlockId;
+export const selectActiveBlockId = (state: RootState) => state.activeBlockId;
 
 export const { set } = activeBlockIdSlice.actions;
 
