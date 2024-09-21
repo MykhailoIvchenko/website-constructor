@@ -21,7 +21,7 @@ const Editor: React.FC = () => {
           <></>
         </EditorSection>
 
-        <EditorSection width={37} bgColor="bg-secondary">
+        <EditorSection width={37} isColoredBg={true}>
           <></>
         </EditorSection>
 
