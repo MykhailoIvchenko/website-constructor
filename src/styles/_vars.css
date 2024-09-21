@@ -1,0 +1,29 @@
+:root {
+  --main-font-family: Roboto;
+  --main-bg-color: #ffffff;
+  --secondary-bg-color: #f5f5fc;
+  --main-font-color: #252a32;
+  --secondary-font-color: #97aacd;
+  --contrast-font-color: #ffffff;
+  --main-font-weight: 400;
+  --main-font-size: 14px;
+  --small-font-size: 12px;
+  --large-font-size: 18px;
+  --huge-font-size: 22px;
+  --rendered-button-bg-color: #4368e0;
+  --action-tab-main-bg-color: #449cf4;
+  --action-tab-secondary-bg-color: #68c2e9;
+  --clone-button-bg-color: #4b97b8;
+  --tiny-gap: calc(var(--basic-gap) / 2);
+  --basic-gap: 10px;
+  --medium-gap: calc(var(--basic-gap) * 1.5);
+  --large-gap: calc(var(--basic-gap) * 3);
+  --header-height: 70px;
+  --editor-height: calc(100vh - var(--header-height));
+  --small-border-radius: 2px;
+  --medium-border-radius: 4px;
+  --large-border-radius: 6px;
+  --controls-bg-color: #f6f9fe;
+  --active-block-bg-color: #d9e7ff;
+  --scroll-bar-width: 4px;
+}
