@@ -1,0 +1,46 @@
+@import './styles/_vars.css';
+@import '/src/styles/reset.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: var(--main-font-family), Inter, sans-serif;
+  line-height: 1.5;
+  font-weight: var(--main-font-weight);
+  font-size: var(--main-font-size);
+  color: var(--main-font-color);
+  background-color: var(--main-bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-color: var(--secondary-bg-color) var(--main-bg-color);
+  scrollbar-width: thin;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: var(--scroll-bar-width);
+  height: 8px;
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--main-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-bg-color);
+  border-radius: 4px;
+  border: 2px solid var(--main-bg-color);
+}
