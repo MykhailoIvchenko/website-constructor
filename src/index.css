@@ -1,5 +1,5 @@
 @import './styles/_vars.css';
-@import '/src/styles/reset.css';
+@import './styles/reset.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
