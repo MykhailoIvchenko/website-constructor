@@ -9,4 +9,6 @@ interface IConstructorBlock {
   content: string;
 }
 
+type ConstructorBlocks = IConstructorBlock[];
+
 type ReactChildrenType = React.ReactNode | React.ReactNode[];

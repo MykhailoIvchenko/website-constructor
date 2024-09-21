@@ -4,6 +4,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { TouchBackend } from 'react-dnd-touch-backend';
 import EditorSection from '../editor.section/editor.section';
 import ControlsPanel from '../controls.panel/controls.panel';
+import ConstructorPanel from '../constructor.panel/constructor.panel';
 
 const Editor: React.FC = () => {
   const isTouchDevice = () => {
@@ -23,7 +24,7 @@ const Editor: React.FC = () => {
         </EditorSection>
 
         <EditorSection width={37} isColoredBg={true}>
-          <></>
+          <ConstructorPanel />
         </EditorSection>
 
         <EditorSection width={44}>
