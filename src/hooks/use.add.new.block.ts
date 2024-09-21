@@ -1,13 +1,11 @@
-import useConstructorBlocksDispatch from '../redux/hooks/dispatch.hooks/use.blocks.list.dispatch';
 import { v4 as uuidv4 } from 'uuid';
 import { BlockTitles } from '../utils/enums';
-import { useSelectConstructorBlocks } from '../redux/hooks/select.hooks/use.select.constructor.blocks';
+import useAddBlockDispatch from '../redux/hooks/dispatch.hooks/use.add.block.dispatch';
 
 type UseAddNewBlockType = () => AddNewBlockType;
 
 export const useAddNewBlock: UseAddNewBlockType = () => {
-  const blocks = useSelectConstructorBlocks();
-  const setConstructorBlocks = useConstructorBlocksDispatch();
+  const addBlock = useAddBlockDispatch();
 
   const addNewBlock: AddNewBlockType = (type) => {
     const newBlock: IConstructorBlock = {
@@ -40,9 +38,7 @@ export const useAddNewBlock: UseAddNewBlockType = () => {
         break;
     }
 
-    const updatedBlocksList = [...blocks, newBlock];
-
-    setConstructorBlocks(updatedBlocksList);
+    addBlock(newBlock);
   };
 
   return addNewBlock;

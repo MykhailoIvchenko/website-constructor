@@ -7,17 +7,18 @@ export const constructorBlocksSlice = createSlice({
   name: 'constructorBlocks',
   initialState,
   reducers: {
-    //@ts-ignore
-    set: (
-      _state: ConstructorBlocks,
-      action: PayloadAction<ConstructorBlocks>
-    ) => action.payload,
+    addBlock: (
+      state: ConstructorBlocks,
+      action: PayloadAction<IConstructorBlock>
+    ) => {
+      return [...state, action.payload];
+    },
   },
 });
 
 export const selectConstructorBlocks = (state: RootState) =>
   state.constructorBlocks;
 
-export const { set } = constructorBlocksSlice.actions;
+export const { addBlock } = constructorBlocksSlice.actions;
 
 export default constructorBlocksSlice.reducer;
