@@ -2,6 +2,7 @@ import React from 'react';
 import ContentInputArea from './content.input.area';
 import classNames from 'classnames';
 import { useRenderBlockTypeIcon } from '../../hooks/use.render.block.type';
+import ActionsTabsContainer from '../actions.tabs.container/actions.tabs.container';
 
 type ConstructorBlockProps = {
   type: BlockType;
@@ -32,6 +33,8 @@ const ConstructorBlock: React.FC<ConstructorBlockProps> = ({
 
   return (
     <div className={containerClass}>
+      {id === '1' && <ActionsTabsContainer id={id} />}
+
       <div className="h-full w-full flex flex-col gap-basic justify-center items-center">
         {renderIcon(type)}
 
