@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDrag } from 'react-dnd';
 import classNames from 'classnames';
 import { useRenderBlockTypeIcon } from '../../hooks/use.render.block.type';
+import { useAddNewBlock } from '../../hooks/use.add.new.block';
 
 type BlockControlProps = {
   type: BlockType;
@@ -10,6 +11,7 @@ type BlockControlProps = {
 
 const BlockControl: React.FC<BlockControlProps> = ({ title, type }) => {
   const renderIcon = useRenderBlockTypeIcon();
+  const addNewBlock = useAddNewBlock();
 
   const [{ isDragging }, drag] = useDrag(() => ({
     type: type,
@@ -26,8 +28,17 @@ const BlockControl: React.FC<BlockControlProps> = ({ title, type }) => {
     }
   );
 
+  const addBlock = useCallback((event: React.MouseEvent) => {
+    event.stopPropagation();
+    addNewBlock(type);
+  }, []);
+
   return (
-    <div className={containerClass} ref={drag}>
+    <div
+      className={containerClass}
+      ref={drag}
+      onClick={(event) => addBlock(event)}
+    >
       <div className="h-full flex flex-col gap-basic justify-center items-center">
         {renderIcon(type)}
 
