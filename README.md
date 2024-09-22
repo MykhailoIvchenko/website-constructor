@@ -12,7 +12,8 @@ The application doesn't save any data anywhere so it would be lost after reload.
   so you can change the content. To make the block inactive click on the other block,
   any empty space or press "Enter" or "Escape" button.
 - **Block content editing:** Print or paste a text in the input of active block to change the content of this block.
-  You should paste a valid url for the image block for an image displaying.
+  A valid url for the image block should be pasted into the input for an image displaying.
+  This link https://picsum.photos/200/300 can be used for the image (the image is not always the same).
 - **Block cloning:** The block could be cloned by click on the "clone" button.
 - **Block deleting:** The block could be deleted by click on the "delete" button.
 - **Block moving:** The block could be moved one position up or down by click on the "move up" or "move down" button.
@@ -41,9 +42,10 @@ The application doesn't save any data anywhere so it would be lost after reload.
 
 3. **Launch the application:**
 
-```sh
-npm run dev
-```
+   ```sh
+   npm run dev
+   ```
 
 4. **Access the application:**
+
    Open your web browser and go to `http://localhost:5173/`.
