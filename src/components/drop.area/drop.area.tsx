@@ -26,7 +26,7 @@ const DropArea: React.FC<DropAreaProps> = ({ children }) => {
     }),
   }));
 
-  const containerClass = classNames('h-full w-full', {
+  const containerClass = classNames('h-full w-full min-h-[140px]', {
     'opacity-50': canDrop && !isOver,
     'opacity-90': isOver,
   });

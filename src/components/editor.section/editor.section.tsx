@@ -13,7 +13,7 @@ const EditorSection: React.FC<EditorSectionProps> = ({
   children,
 }) => {
   const sectionClasses = classNames(
-    `h-editor overflow-auto w-full p-large min-w-[270px]`,
+    `min-h-[200px] md:h-editor overflow-auto w-full p-large min-w-[270px]`,
     {
       'md:w-[19%]': width === 19,
       'md:w-[37%]': width === 37,
