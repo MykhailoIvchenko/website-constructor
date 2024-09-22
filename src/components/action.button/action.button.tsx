@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import React from 'react';
 
 type ActionButtonProps = {
   children: ReactChildrenType;
@@ -21,7 +20,7 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   );
 
   return (
-    <button className={buttonClasses} type={'button'} onClick={clickHandler}>
+    <button className={buttonClasses} type="button" onClick={clickHandler}>
       {children}
     </button>
   );
