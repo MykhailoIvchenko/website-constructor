@@ -7,14 +7,18 @@ type UseRenderBlockType = () => (
   type: BlockType,
   content: string,
   id: string
-) => ReactChildrenType;
+) => ReactChildrenType | null;
 
 export const useRenderBlock: UseRenderBlockType = () => {
   const renderBlock = (
     type: BlockType,
     content: string,
     id: string
-  ): ReactChildrenType => {
+  ): ReactChildrenType | null => {
+    if (!content) {
+      return null;
+    }
+
     switch (type) {
       case 'headline':
         return <HeadlineBlockRenderer content={content} key={id} />;
