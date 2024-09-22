@@ -1,12 +1,15 @@
 import classNames from 'classnames';
 
 type ActionButtonProps = {
+  tooltip: string;
   children: ReactChildrenType;
   isColoredBg?: boolean;
   clickHandler: () => void;
+  index?: number;
 };
 
 const ActionButton: React.FC<ActionButtonProps> = ({
+  tooltip,
   children,
   isColoredBg = false,
   clickHandler,
@@ -20,7 +23,12 @@ const ActionButton: React.FC<ActionButtonProps> = ({
   );
 
   return (
-    <button className={buttonClasses} type="button" onClick={clickHandler}>
+    <button
+      className={buttonClasses}
+      type="button"
+      onClick={clickHandler}
+      title={tooltip}
+    >
       {children}
     </button>
   );

@@ -43,21 +43,25 @@ const ActionsTabsContainer: React.FC<ActionsTabsContainerProps> = ({
       className={`flex gap-tiny px-basic absolute top-0 right-0 -translate-y-full`}
     >
       <ActionsTab>
-        <ActionButton clickHandler={handleMoveBlockDown}>
+        <ActionButton clickHandler={handleMoveBlockDown} tooltip={'Move down'}>
           <ArrowDownIcon />
         </ActionButton>
 
-        <ActionButton clickHandler={handleMoveBlockUp}>
+        <ActionButton clickHandler={handleMoveBlockUp} tooltip={'Move up'}>
           <ArrowUpIcon />
         </ActionButton>
       </ActionsTab>
 
       <ActionsTab isSecondaryTabBg={true}>
-        <ActionButton clickHandler={handleCloneBlockClick} isColoredBg={true}>
+        <ActionButton
+          clickHandler={handleCloneBlockClick}
+          isColoredBg={true}
+          tooltip={'Clone'}
+        >
           <CopyIcon />
         </ActionButton>
 
-        <ActionButton clickHandler={deleteBlock}>
+        <ActionButton clickHandler={deleteBlock} tooltip={'Delete'}>
           <DeleteIcon />
         </ActionButton>
       </ActionsTab>
