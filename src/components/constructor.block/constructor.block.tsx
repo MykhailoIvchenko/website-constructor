@@ -54,7 +54,13 @@ const ConstructorBlock: React.FC<ConstructorBlockProps> = ({
 
         <span className="text-sm">{title}</span>
 
-        {id === activeBlockId && <ContentInputArea content={content} id={id} />}
+        {id === activeBlockId && (
+          <ContentInputArea
+            content={content}
+            id={id}
+            isImage={type === 'image'}
+          />
+        )}
       </div>
     </div>
   );
