@@ -19,3 +19,5 @@ type ConstructorBlocks = IConstructorBlock[];
 type ReactChildrenType = React.ReactNode | React.ReactNode[];
 
 type AddNewBlockType = (type: BlockType) => void;
+
+type CloneBlockType = (block: IConstructorBlock) => void;

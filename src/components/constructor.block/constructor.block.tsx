@@ -42,7 +42,12 @@ const ConstructorBlock: React.FC<ConstructorBlockProps> = ({
 
   return (
     <div className={containerClass} onClick={handleBlockClick}>
-      {id === activeBlockId && <ActionsTabsContainer id={id} />}
+      {id === activeBlockId && (
+        <ActionsTabsContainer
+          block={{ type, title, content, id }}
+          index={index}
+        />
+      )}
 
       <div className="h-full w-full flex flex-col gap-basic justify-center items-center">
         {renderIcon(type)}
