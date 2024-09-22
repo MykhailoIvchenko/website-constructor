@@ -6,6 +6,7 @@ import ActionsTab from '../actions.tab/actions.tab';
 import CopyIcon from '../icons/copy.icon';
 import DeleteIcon from '../icons/delete.icon';
 import { useCloneBlock } from '../../hooks/use.clone.block.dispatch';
+import useDeleteBlockDispatch from '../../redux/hooks/dispatch.hooks/use.delete.block.dispatch';
 
 type ActionsTabsContainerProps = {
   block: IConstructorBlock;
@@ -17,6 +18,7 @@ const ActionsTabsContainer: React.FC<ActionsTabsContainerProps> = ({
   index,
 }) => {
   const cloneBlock = useCloneBlock();
+  const deleteBlock = useDeleteBlockDispatch(block.id);
 
   const handleCloneBlockClick = useCallback(() => {
     cloneBlock(block);
@@ -41,7 +43,7 @@ const ActionsTabsContainer: React.FC<ActionsTabsContainerProps> = ({
           <CopyIcon />
         </ActionButton>
 
-        <ActionButton clickHandler={() => {}}>
+        <ActionButton clickHandler={deleteBlock}>
           <DeleteIcon />
         </ActionButton>
       </ActionsTab>

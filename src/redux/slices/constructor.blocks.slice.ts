@@ -13,6 +13,9 @@ export const constructorBlocksSlice = createSlice({
     ) => {
       return [...state, action.payload];
     },
+    deleteBlock: (state: ConstructorBlocks, action: PayloadAction<string>) => {
+      return state.filter((block) => block.id !== action.payload);
+    },
     updateBlockContent: (
       state: ConstructorBlocks,
       action: PayloadAction<IConstructorBlockUpdateData>
@@ -32,6 +35,7 @@ export const constructorBlocksSlice = createSlice({
 export const selectConstructorBlocks = (state: RootState) =>
   state.constructorBlocks;
 
-export const { addBlock, updateBlockContent } = constructorBlocksSlice.actions;
+export const { addBlock, deleteBlock, updateBlockContent } =
+  constructorBlocksSlice.actions;
 
 export default constructorBlocksSlice.reducer;
