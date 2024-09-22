@@ -16,7 +16,7 @@ The application doesn't save any data anywhere so it would be lost after reload.
 - **Block cloning:** The block could be cloned by click on the "clone" button.
 - **Block deleting:** The block could be deleted by click on the "delete" button.
 - **Block moving:** The block could be moved one position up or down by click on the "move up" or "move down" button.
-- **Blocks rendering** All blocks with the content would be rendered in the render panel.
+- **Blocks rendering:** All blocks with the content would be rendered in the render panel.
 
 ## Getting Started
 
