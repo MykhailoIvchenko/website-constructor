@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import ContentInputArea from './content.input.area';
 import classNames from 'classnames';
 import { useRenderBlockTypeIcon } from '../../hooks/use.render.block.type';
 import ActionsTabsContainer from '../actions.tabs.container/actions.tabs.container';
 import { useSelectActiveBlockId } from '../../redux/hooks/select.hooks/use.select.active.block.id';
+import useActiveBlockIdDispatch from '../../redux/hooks/dispatch.hooks/use.active.block.dispatch';
 
 type ConstructorBlockProps = {
   type: BlockType;
@@ -22,6 +23,7 @@ const ConstructorBlock: React.FC<ConstructorBlockProps> = ({
 }) => {
   const renderIcon = useRenderBlockTypeIcon();
   const activeBlockId = useSelectActiveBlockId();
+  const setActiveBlockId = useActiveBlockIdDispatch();
 
   const containerClass = classNames(
     'px-basic py-medium flex flex-col ' +
@@ -33,8 +35,13 @@ const ConstructorBlock: React.FC<ConstructorBlockProps> = ({
     }
   );
 
+  const handleBlockClick = useCallback((event: React.MouseEvent) => {
+    event.stopPropagation();
+    setActiveBlockId(id);
+  }, []);
+
   return (
-    <div className={containerClass}>
+    <div className={containerClass} onClick={handleBlockClick}>
       {id === activeBlockId && <ActionsTabsContainer id={id} />}
 
       <div className="h-full w-full flex flex-col gap-basic justify-center items-center">

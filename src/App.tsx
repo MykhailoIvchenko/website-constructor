@@ -1,14 +1,15 @@
-import { Provider } from 'react-redux';
 import Editor from './components/editor/editor';
 import Header from './components/header/header';
-import { store } from './redux/store';
+import useDeactivateBlock from './hooks/use.deactivate.block';
 
 function App() {
+  useDeactivateBlock();
+
   return (
-    <Provider store={store}>
+    <>
       <Header />
       <Editor />
-    </Provider>
+    </>
   );
 }
 
