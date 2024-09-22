@@ -2,7 +2,9 @@ import { useAppDispatch } from '../helper.hooks';
 import { addBlock } from '../../slices/constructor.blocks.slice';
 import { Dispatch } from 'react';
 
-const useAddBlockDispatch = (): Dispatch<IConstructorBlock> => {
+type UseAddBlockDispatchType = () => Dispatch<IConstructorBlock>;
+
+const useAddBlockDispatch: UseAddBlockDispatchType = () => {
   const dispatch = useAppDispatch();
 
   const addConstructorBlock = (block: IConstructorBlock) =>

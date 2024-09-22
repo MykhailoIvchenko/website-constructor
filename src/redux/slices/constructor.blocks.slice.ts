@@ -13,12 +13,25 @@ export const constructorBlocksSlice = createSlice({
     ) => {
       return [...state, action.payload];
     },
+    updateBlockContent: (
+      state: ConstructorBlocks,
+      action: PayloadAction<IConstructorBlockUpdateData>
+    ) => {
+      return state.map((block) =>
+        block.id === action.payload.id
+          ? {
+              ...block,
+              content: action.payload.content,
+            }
+          : block
+      );
+    },
   },
 });
 
 export const selectConstructorBlocks = (state: RootState) =>
   state.constructorBlocks;
 
-export const { addBlock } = constructorBlocksSlice.actions;
+export const { addBlock, updateBlockContent } = constructorBlocksSlice.actions;
 
 export default constructorBlocksSlice.reducer;

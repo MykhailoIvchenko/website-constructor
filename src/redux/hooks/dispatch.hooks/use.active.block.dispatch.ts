@@ -2,7 +2,9 @@ import { useAppDispatch } from '../helper.hooks';
 import { set } from '../../slices/active.block.id.slice';
 import { Dispatch } from 'react';
 
-const useActiveBlockIdDispatch = (): Dispatch<string> => {
+type UseActiveBlockIdDispatchType = () => Dispatch<string>;
+
+const useActiveBlockIdDispatch: UseActiveBlockIdDispatchType = () => {
   const dispatch = useAppDispatch();
 
   const setActiveBlockId = (blockId: string) => dispatch(set(blockId));
