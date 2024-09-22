@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# React Editor (pet-project)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The React Editor is a web application built with React.js, TypeScript, Redux Toolkit, Tailwind css.
+It allows user to create blocks of certain types and change their content without knowing any programming language.
+The application doesn't save any data anywhere so it would be lost after reload.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Block creation:** Click on the block of certain type in the block controls panel
+  or drag it to the constructor area and drop it there.
+- **Block activation:** Click on the certain block in the constructor panel to make it active,
+  so you can change the content. To make the block inactive click on the other block,
+  any empty space or press "Enter" or "Escape" button.
+- **Block content editing:** Print or paste a text in the input of active block to change the content of this block.
+  A valid url for the image block should be pasted into the input for an image displaying.
+  This link https://picsum.photos/200/300 can be used for the image (the image is not always the same).
+- **Block cloning:** The block could be cloned by click on the "clone" button.
+- **Block deleting:** The block could be deleted by click on the "delete" button.
+- **Block moving:** The block could be moved one position up or down by click on the "move up" or "move down" button.
+- **Blocks rendering:** All blocks with the content would be rendered in the render panel.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js 20x
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### How to run
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Clone the repository:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```sh
+   git clone https://github.com/MykhailoIvchenko/website-constructor.git
+   cd website-constructor
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. **Install the dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+3. **Launch the application:**
+
+   ```sh
+   npm run dev
+   ```
+
+4. **Access the application:**
+
+   Open your web browser and go to `http://localhost:5173/`.
